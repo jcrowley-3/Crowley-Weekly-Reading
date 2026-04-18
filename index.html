@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crowley Weekly Reads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1a1612;
+      --paper: #f7f3ec;
+      --accent: #8b3a2a;
+      --rule: #c9bfb0;
+      --muted: #7a6f64;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
+    /* Subtle paper texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 3.5rem 0 2rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .masthead {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .masthead span {
+      color: var(--accent);
+    }
+
+    .tagline {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Week block ── */
+    .week {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .week-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .week-label {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .week-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .week-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 3px;
+    }
+
+    /* ── Link card ── */
+    .link-item {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--rule);
+      transition: border-color 0.2s;
+    }
+
+    .link-item:hover {
+      border-left-color: var(--accent);
+    }
+
+    .link-item a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.3;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .link-item a:hover {
+      color: var(--accent);
+    }
+
+    .link-item a::after {
+      content: ' ↗';
+      font-size: 0.75em;
+      color: var(--accent);
+      opacity: 0.7;
+    }
+
+    .link-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem 0 3rem;
+      font-size: 0.75rem;
+      color: var(--rule);
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="masthead">Crowley<br><span>Weekly Reads</span></div>
+    <div class="tagline">A few things worth your time, curated by John</div>
+  </header>
+
+  <!-- ============================================================
+       HOW TO ADD A NEW WEEK:
+       Copy the block below (from "week" to "/week") and paste it
+       right after the <header> closing tag above. Update the week
+       number, date, and replace the link items with your own.
+  =============================================================== -->
+
+  <!-- WEEK 1 — example entries, replace with your own -->
+  <div class="week">
+    <div class="week-header">
+      <span class="week-label">Week 1</span>
+      <span class="week-rule"></span>
+      <span class="week-date">April 18, 2025</span>
+    </div>
+
+    <div class="link-item">
+      <a href="https://example.com/article-one" target="_blank">The Surprisingly Rich History of the Index Card</a>
+      <div class="link-note">A genuinely delightful piece on how a simple paper tool shaped modern knowledge organization. Shorter than you'd expect.</div>
+    </div>
+
+    <div class="link-item">
+      <a href="https://example.com/article-two" target="_blank">Why Forests Communicate Through Fungi</a>
+      <div class="link-note">The science behind how trees share nutrients and signals underground. Made me look at our backyard differently.</div>
+    </div>
+
+    <div class="link-item">
+      <a href="https://example.com/article-three" target="_blank">The Last Lighthouse Keeper in America</a>
+      <div class="link-note">A profile piece that reads almost like a short story. Worth a quiet Saturday morning cup of coffee.</div>
+    </div>
+
+  </div>
+  <!-- END WEEK 1 -->
+
+  <footer>Crowley Family &mdash; Est. 2025</footer>
+
+</div>
+</body>
+</html>
